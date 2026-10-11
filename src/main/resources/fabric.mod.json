@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "realcraft",
+  "version": "${version}",
+  "name": "Real Craft - Mesa Realista",
+  "description": "Mesa realista sem interface; bata no resultado para fabricar e soltar o item. Inclui Martelo de Pedra.",
+  "authors": ["Real Craft"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.realcraft.RealCraftMod"],
+    "client": ["com.realcraft.RealCraftClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.1",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

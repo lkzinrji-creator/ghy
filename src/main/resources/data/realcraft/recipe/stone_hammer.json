@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "#",
+    "S"
+  ],
+  "key": {
+    "#": "minecraft:stone",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "realcraft:stone_hammer",
+    "count": 1
+  }
+}
