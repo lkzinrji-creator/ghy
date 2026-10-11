@@ -1,0 +1,38 @@
+
+name: Compilar Mod Minecraft 26.2
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v6
+
+      - name: Instalar Java 25
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Compilar mod
+        run: chmod +x gradlew && ./gradlew build --no-daemon
+
+      - name: Disponibilizar arquivos JAR
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mod-Minecraft-Compilado
+          path: '**/build/libs/*.jar'
+          if-no-files-found: error
+          retention-days: 14
